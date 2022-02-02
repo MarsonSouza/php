@@ -224,10 +224,6 @@ class User extends Model
             else
             {   
                 $dataRecovery = $res_user[0];
-
-                /* PHP <7.2 (DEPRECATED)
-                $code = base64_encode(mcrypt_encrypt(MCRYPT_RIJNDAEL_128, USER::SECRET, $res_user['idrecovery'],    MCRYPT_MODE_ECB));
-                */
                 
                 $code = base64_encode(
                     openssl_encrypt(
@@ -322,7 +318,6 @@ class User extends Model
             ));
     }
 
-    /* Erros  */
     public static function setError($msg)
     {
         $_SESSION[User::ERROR] = $msg;
@@ -342,7 +337,6 @@ class User extends Model
         $_SESSION[User::ERROR] = NULL;
     }
 
-    /* Erros de registro/cadastro */
     public static function setErrorRegister($msg)
 	{
 
@@ -368,7 +362,6 @@ class User extends Model
 
     }
     
-    /* Sucesso */
     public static function setSuccess($msg)
     {
         $_SESSION[User::SUCCESS] = $msg;
@@ -387,8 +380,7 @@ class User extends Model
     {
         $_SESSION[User::SUCCESS] = NULL;
     }
-    /* Sucesso Fim*/
-
+    
     public static function checkLoginExist($login)
     {
         $sql = new Sql();
