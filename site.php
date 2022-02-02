@@ -582,11 +582,10 @@ $app->get('/boleto/:idorder', function($idorder)
 	$dadosboleto["especie"] = "R$";
 	$dadosboleto["especie_doc"] = "";
 	
-	$dadosboleto["agencia"] = "1690"; // Num da agencia, sem digito
-	$dadosboleto["conta"] = "48781";	// Num da conta, sem digito
-	$dadosboleto["conta_dv"] = "2"; 	// Digito do Num da conta
-
-	$dadosboleto["carteira"] = "175";  // Código da Carteira: pode ser 175, 174, 104, 109, 178, ou 157
+	$dadosboleto["agencia"] = "1690"; 
+	$dadosboleto["conta"] = "48781";	
+	$dadosboleto["conta_dv"] = "2"; 	
+	$dadosboleto["carteira"] = "175";  
 
 	$dadosboleto["identificacao"] = "Hcode Treinamentos";
 	$dadosboleto["cpf_cnpj"] = "24.700.731/0001-08";
